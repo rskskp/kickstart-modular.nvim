@@ -35,6 +35,7 @@ return function(opts)
 
       local args = { 'rg' }
       if prompt_split[1] then
+        table.insert(args, '--no-ignore')
         table.insert(args, '-e')
         table.insert(args, prompt_split[1])
       end
