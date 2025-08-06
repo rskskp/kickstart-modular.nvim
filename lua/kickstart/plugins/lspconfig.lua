@@ -332,6 +332,9 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+      -- @TODO: to fix config load
+      require('lspconfig')['phpactor'].setup(servers['phpactor'])
+
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
