@@ -94,6 +94,7 @@ return {
       sources = {
         default = { 'lsp', 'snippets', 'buffer', 'path', 'lazydev', 'ripgrep' },
         providers = {
+          lsp = { priority = 10000 },
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           ripgrep = {
             module = 'blink-ripgrep',
@@ -130,7 +131,7 @@ return {
               -- Examples:
               -- - ".git" (default)
               -- - { ".git", "package.json", ".root" }
-              project_root_marker = '.git',
+              project_root_marker = { '.git', 'package.json', 'composer.json' },
 
               -- Enable fallback to neovim cwd if project_root_marker is not
               -- found. Default: `true`, which means to use the cwd.
