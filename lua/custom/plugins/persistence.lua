@@ -29,7 +29,7 @@ return {
     vim.api.nvim_create_autocmd('User', {
       pattern = 'PersistenceLoadPre',
       callback = function()
-        require('laravel.app'):new(require 'laravel'):start()
+        require('laravel.core.app'):start(require 'laravel')
       end,
     }),
 
